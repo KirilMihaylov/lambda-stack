@@ -1,0 +1,8 @@
+POST http://localhost:8080/service/lambda_lib
+Authorization: EwR1c2Vyzh+jAQc5CaTy5RMAAAAI7v8nG4TGKJkC9OV/zpmEFwRBD+OjVXngnIlJmFCkYV3OaOT+qsejFIXx2cFULAGvehke1d5Tm+0f8cjmPgIK
+
+123
+
+> {%
+    client.assert(response.status == 200);
+%}

@@ -1,0 +1,43 @@
+[package]
+name = "lambda-auth-login-helper"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.lambda-auth]
+workspace = true
+
+[dependencies.aes-gcm]
+workspace = true
+
+[dependencies.anyhow]
+workspace = true
+
+[dependencies.bytes]
+workspace = true
+
+[dependencies.clap]
+workspace = true
+
+[dependencies.hkdf]
+workspace = true
+
+[dependencies.postcard]
+workspace = true
+
+[dependencies.sha2]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = ["io-std", "io-util", "net", "macros", "sync", "rt-multi-thread"]
+
+[dependencies.opaque-ke]
+workspace = true
+
+[dependencies.reqwest]
+workspace = true
+
+[dependencies.zeroize]
+workspace = true

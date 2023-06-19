@@ -1,0 +1,23 @@
+[database]
+host = "192.168.99.2"
+port = 5432
+database = "lambda_stack"
+
+[global.requests]
+max_concurrent = 512
+
+[global.instances]
+min_pool_size = 4
+max_idle_pool_size = 32
+
+[[bind]]
+host = "localhost"
+port = 8080
+
+[[module]]
+id = "lambda_lib"
+path = "./target/wasm32-unknown-unknown/release/lambda_lib.wasm"
+
+[[route]]
+path = "lambda_lib"
+module = "lambda_lib"

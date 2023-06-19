@@ -1,0 +1,59 @@
+[package]
+name = "lambda-auth-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.lambda-auth]
+workspace = true
+
+[dependencies.actix-web]
+workspace = true
+
+[dependencies.aes-gcm]
+workspace = true
+
+[dependencies.anyhow]
+workspace = true
+
+[dependencies.clap]
+workspace = true
+features = ["color", "std"]
+
+[dependencies.data-encoding]
+workspace = true
+
+[dependencies.ed25519-dalek]
+workspace = true
+
+[dependencies.hkdf]
+workspace = true
+
+[dependencies.postcard]
+workspace = true
+
+[dependencies.sha2]
+workspace = true
+
+[dependencies.sqlx]
+workspace = true
+
+[dependencies.subtle]
+workspace = true
+
+[dependencies.time]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = ["io-std"]
+
+[dependencies.opaque-ke]
+workspace = true
+
+[dependencies.rand_core]
+workspace = true
+
+[dependencies.zeroize]
+workspace = true

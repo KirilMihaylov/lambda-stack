@@ -1,0 +1,60 @@
+[package]
+name = "lambda-web-server"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.69"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.anyhow]
+workspace = true
+
+[dependencies.actix-web]
+workspace = true
+features = ["macros"]
+
+[dependencies.clap]
+workspace = true
+features = ["color", "std"]
+
+[dependencies.data-encoding]
+workspace = true
+
+[dependencies.ed25519-dalek]
+workspace = true
+
+[dependencies.lambda-auth]
+workspace = true
+
+[dependencies.lambda-rt]
+workspace = true
+
+[dependencies.postcard]
+workspace = true
+
+[dependencies.rand]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+features = ["derive"]
+
+[dependencies.sqlx]
+workspace = true
+
+[dependencies.time]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = ["sync"]
+
+[dependencies.toml]
+workspace = true
+
+[dependencies.wasmtime]
+workspace = true
+features = ["async", "cranelift", "parallel-compilation", "pooling-allocator", "vtune"]
+
+[dependencies.zeroize]
+workspace = true

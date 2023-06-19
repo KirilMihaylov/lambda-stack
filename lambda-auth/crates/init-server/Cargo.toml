@@ -1,0 +1,34 @@
+[package]
+name = "lambda-auth-init"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.anyhow]
+workspace = true
+
+[dependencies.clap]
+workspace = true
+
+[dependencies.lambda-auth]
+workspace = true
+
+[dependencies.opaque-ke]
+workspace = true
+
+[dependencies.postcard]
+workspace = true
+
+[dependencies.sqlx]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = ["io-std", "io-util", "net", "macros", "sync", "rt-multi-thread"]
+
+[dependencies.rand_core]
+workspace = true
+
+[dependencies.zeroize]
+workspace = true

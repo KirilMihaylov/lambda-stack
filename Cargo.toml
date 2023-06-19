@@ -1,0 +1,50 @@
+[workspace]
+members = [
+    "./lambda-auth",
+    "./lambda-sdk/*",
+    "./lambda-lib",
+    "./*/crates/*",
+]
+
+default-members = [
+    "./lambda-auth",
+    "./lambda-sdk/*",
+    "./*/crates/*",
+]
+
+[workspace.dependencies]
+lambda-auth.path = "./lambda-auth"
+lambda-sdk.path = "./lambda-sdk/lambda-sdk"
+lambda-rt.path = "./lambda-sdk/lambda-rt"
+
+actix-web = { version = "4.3", default-features = false, features = ["compress-brotli", "compress-gzip", "compress-zstd", "rustls"] }
+anyhow = { version = "1", default-features = false, features = ["std"] }
+aes-gcm = { version = "0.10.1", default-features = false, features = ["aes", "std", "zeroize"] }
+argon2 = { version = "0.5", default-features = false }
+bytes = { version = "1.4", default-features = false, features = ["std"] }
+clap = { version = "4.3", features = ["derive"] }
+data-encoding = { version = "2.3", default-features = false, features = ["alloc"] }
+ed25519-dalek = { version = "2.0.0-rc.2", default-features = false, features = ["serde", "std", "zeroize"] }
+hkdf = { version = "0.12.3", default-features = false, features = ["std"] }
+opaque-ke = { version = "3.0.0-pre.2", default-features = false, features = ["argon2", "serde", "std", "ristretto255-voprf"] }
+postcard = { version = "1", default-features = false, features = ["alloc"] }
+rand = { version = "0.8.5", default-features = false }
+rand_core = { version = "0.6.4", default-features = false, features = ["getrandom"] }
+reqwest = { version = "0.11.18", default-features = false, features = ["brotli", "deflate", "gzip", "rustls-tls"] }
+serde = { version = "1", default-features = false }
+sha2 = { version = "0.10.7", default-features = false }
+sqlx = { version = "0.7.0-alpha.3", default-features = false, features = ["postgres", "runtime-tokio-rustls"] }
+subtle = { version = "2.4", default-features = false }
+time = { version = "0.3.21", default-features = false, features = ["serde"] }
+thiserror = { version = "1", default-features = false }
+tokio = { version = "1.28", default-features = false }
+toml = { version = "0.7.3", default-features = false, features = ["parse"] }
+wasmtime = { version = "9", default-features = false }
+zeroize = { version = "1.6", default-features = false, features = ["alloc"] }
+
+[patch.crates-io]
+opaque-ke = { git = "https://github.com/facebook/opaque-ke", revision = "deb7ca3dc0984e7e7c52b86c7cdfca85b7036d41" }
+
+[profile.release]
+lto = "fat"
+opt-level = 3
